@@ -1,0 +1,5 @@
+Projets 
+
+Chaque projet est accompagné d’un RAEDME.txt qui explique le fonctionnement ainsi que le but du programme.
+
+Projet 1 Gestion d'étudiants avec une table de hachage

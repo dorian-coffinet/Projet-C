@@ -1,0 +1,81 @@
+﻿Test 1 : 
+
+Au lancement de l'exécutable  (valgrind ./programme), on me demande le nom du fichier qui contient les étudiants.
+Si je rentre au clavier un fichier qui n'existe pas, le message ci-dessous s'affiche : 
++++ Chargement de la liste des étudiants +++
+Nom du fichier : a
+ouverture du fichier impossible...
+
+Test 2 : 
+
+Si je rentre au clavier un nom de fichier qui est sensé contenir les étudiants mais qui en réalité est vide, le chargement du
+fichier s'effectue. Ensuite je désire afficher la liste des étudiants, j'obtiens le résultat suivant : 
+0 : 
+1 : 
+2 : 
+3 : 
+4 : 
+5 : 
+6 :
+
+
+
+
+99 :
+
+L'agenda est vide.
+
+Test 3 : 
+
+Je désire rechercher un étudiant qui n'est pas dans le fichier etudiant.txt. Je rentre son nom au clavier.
+Le message ci-dessous s'affiche : 
+Quel est le nom de l'étudiant à rechercher ?DUO
+DUO n'est pas un étudiant
+
+Test 4 : 
+
+Je désire insérer un étudiant. Je rentre son nom au clavier puis son prénom et son groupe.
+Quel est le nom de l'étudiant à insérer ?DUO
+Quel est son prénom  ?Anne
+Quel est son groupe ?B
+Ensuite je désire rechercher cet étudiant. Le message ci-dessous s'affiche : 
+Quel est le nom de l'étudiant à rechercher ?DUO
+Groupe B : Anne DUO
+
+Test 5 : 
+
+Je désire insérer un étudiant dont le nom de famille est déjà présent dans l'agenda. Je rentre son nom au clavier puis son prénom et son groupe.
+Quel est le nom de l'étudiant à insérer ?MAURY
+Quel est son prénom  ?Anne
+Quel est son groupe ?C
+Ensuite je désire rechercher cette personne. Le message ci-dessous s'affiche :
+Groupe C : Anne MAURY
+Le problème est que l'utilisateur voulait peut-être rechercher Martial Maury et non Anne MAURY.
+Ensuite je souhaite supprimer l'étudiant MAURY, et le rechercher pour vérifier que la suppression a bien fonctionné.
+Premier problème : on ne demande pas à l'utilisateur quel MAURY il veut supprimer, Anne ou Martial.
+Deuxième problème : plus aucun MAURY n'est présent, Anne et Martial ont été supprimés.
+
+Test 6 :
+
+Je souhaite sauvegarder mon agenda. Un fichier nommé sauvegarde est déjà présent.
+Lors de la demande du nom du fichier dans lequel conserver l'agenda, je rentre au clavier sauvegarde.
+Après vérification, l'ancien fichier sauvegarde a été remplacé par le nouveau.
+(Si le fichier n'existe pas, lors de la sauvegarde il est crée.)
+
+Test 7 :
+
+Je veux quitter l'exécutable, bien sur je quitte normalement, c'est-à-dire en rentrant 0 au clavier. Le message ci-dessous s'affiche : 
+Programme fermé correctement==1835== 
+==1835== HEAP SUMMARY:
+==1835==     in use at exit: 0 bytes in 0 blocks
+==1835==   total heap usage: 153 allocs, 153 frees, 10,688 bytes allocated
+==1835== 
+==1835== All heap blocks were freed -- no leaks are possible
+==1835== 
+==1835== For counts of detected and suppressed errors, rerun with: -v
+==1835== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 13 from 8)
+
+Aucun problème de mémoire n'a été détecté.
+
+ 
+
